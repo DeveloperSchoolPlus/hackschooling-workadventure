@@ -15,5 +15,5 @@ As private fork are not allowed by github, a few steps are required to be able t
 
 ```
 git fetch upstream
-git rebase upstream/develop
+git rebase upstream/master
 ```  
