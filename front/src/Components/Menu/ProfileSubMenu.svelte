@@ -30,9 +30,9 @@
     }
 
     function openEditNameScene(){
-        disableMenuStores();
-        loginSceneVisibleStore.set(true);
-        gameManager.leaveGame(LoginSceneName,new LoginScene());
+        // disableMenuStores();
+        // loginSceneVisibleStore.set(true);
+        // gameManager.leaveGame(LoginSceneName,new LoginScene());
     }
 
     function openEditSkinScene(){
@@ -61,10 +61,12 @@
 <div class="customize-main">
     <div class="submenu">
         <section>
+            <!--
             <button type="button" class="nes-btn" on:click|preventDefault={openEditNameScene}>
                 <img src={btnProfileSubMenuIdentity} alt="Edit your name">
                 <span class="btn-hover">Edit your name</span>
             </button>
+            -->
             <button type="button" class="nes-btn" on:click|preventDefault={openEditSkinScene}>
                 <img src={btnProfileSubMenuWoka} alt="Edit your WOKA">
                 <span class="btn-hover">Edit your WOKA</span>
