@@ -3,7 +3,7 @@ import { DirtyScene } from "../Game/DirtyScene";
 
 const LogoNameIndex: string = "logoLoading";
 const TextName: string = "Loading...";
-const LogoResource: string = "static/images/logo.png";
+const LogoResource: string = "static/hackschooling_images/hackschooling_logo.png";
 const LogoFrame: ImageFrameConfig = { frameWidth: 310, frameHeight: 60 };
 
 const loadingBarHeight: number = 16;

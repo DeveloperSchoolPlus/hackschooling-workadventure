@@ -2,7 +2,7 @@
     import type {Game} from "../../Phaser/Game/Game";
     import {LoginScene, LoginSceneName} from "../../Phaser/Login/LoginScene";
     import {DISPLAY_TERMS_OF_USE, MAX_USERNAME_LENGTH} from "../../Enum/EnvironmentVariable";
-    import logoImg from "../images/logo.png";
+    import logoImg from "../images/hackschooling_logo.png";
     import {gameManager} from "../../Phaser/Game/GameManager";
 
     export let game: Game;
