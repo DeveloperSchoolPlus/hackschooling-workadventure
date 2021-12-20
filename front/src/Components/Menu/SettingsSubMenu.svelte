@@ -61,35 +61,35 @@ function closeMenu() {
 
 <div class="settings-main" on:submit|preventDefault={saveSetting}>
     <section>
-        <h3>Game quality</h3>
+        <h3>Qualité de jeu</h3>
         <div class="nes-select is-dark">
             <select bind:value={valueGame}>
-                <option value="{120}">{isMobile() ? 'High (120 fps)' : 'High video quality (120 fps)'}</option>
-                <option value="{60}">{isMobile() ? 'Medium (60 fps)' : 'Medium video quality (60 fps, recommended)'}</option>
-                <option value="{40}">{isMobile() ? 'Minimum (40 fps)' : 'Minimum video quality (40 fps)'}</option>
-                <option value="{20}">{isMobile() ? 'Small (20 fps)' : 'Small video quality (20 fps)'}</option>
+                <option value="{120}">{isMobile() ? 'Élevé (120 fps)' : 'Haute qualité vidéo (120 fps)'}</option>
+                <option value="{60}">{isMobile() ? 'Moyenne (60 fps)' : 'Qualité vidéo moyenne (60 fps, recommended)'}</option>
+                <option value="{40}">{isMobile() ? 'Minimale (40 fps)' : 'Qualité vidéo minimale (40 fps)'}</option>
+                <option value="{20}">{isMobile() ? 'Basse (20 fps)' : 'Qualité vidéo basse (20 fps)'}</option>
             </select>
         </div>
     </section>
     <section>
-        <h3>Video quality</h3>
+        <h3>Qualité vidéo</h3>
         <div class="nes-select is-dark">
             <select bind:value={valueVideo}>
-                <option value="{30}">{isMobile() ? 'High (30 fps)' : 'High video quality (30 fps)'}</option>
-                <option value="{20}">{isMobile() ? 'Medium (20 fps)' : 'Medium video quality (20 fps, recommended)'}</option>
-                <option value="{10}">{isMobile() ? 'Minimum (10 fps)' : 'Minimum video quality (10 fps)'}</option>
-                <option value="{5}">{isMobile() ? 'Small (5 fps)' : 'Small video quality (5 fps)'}</option>
+                <option value="{30}">{isMobile() ? 'Élevé (30 fps)' : 'Haute qualité vidéo (30 fps)'}</option>
+                <option value="{20}">{isMobile() ? 'Moyenne (20 fps)' : 'Qualité vidéo moyenne (20 fps, recommended)'}</option>
+                <option value="{10}">{isMobile() ? 'Minimale (10 fps)' : 'Qualité vidéo minimale (10 fps)'}</option>
+                <option value="{5}">{isMobile() ? 'Basse (5 fps)' : 'Qualité vidéo basse (5 fps)'}</option>
             </select>
         </div>
     </section>
     <section class="settings-section-save">
-        <p>(Saving these settings will restart the game)</p>
-        <button type="button" class="nes-btn is-primary" on:click|preventDefault={saveSetting}>Save</button>
+        <p>(L'enregistrement de ces paramètres redémarrera le jeu)</p>
+        <button type="button" class="nes-btn is-primary" on:click|preventDefault={saveSetting}>Enregistrer</button>
     </section>
     <section class="settings-section-noSaveOption">
         <label>
             <input type="checkbox" class="nes-checkbox is-dark" bind:checked={fullscreen} on:change={changeFullscreen}/>
-            <span>Fullscreen</span>
+            <span>Plein écran</span>
         </label>
         <label>
             <input type="checkbox" class="nes-checkbox is-dark" bind:checked={notification} on:change={changeNotification}>

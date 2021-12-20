@@ -13,8 +13,8 @@
 </script>
 
 <ul class="selectMenu" style="border-top: {player.color || 'whitesmoke'} 5px solid">
-    <li><button class="text-btn" disabled={!player.visitCardUrl} on:click={openVisitCard}>Visit card</button></li>
-    <li><button class="text-btn" disabled>Add friend</button></li>
+    <li><button class="text-btn" disabled={!player.visitCardUrl} on:click={openVisitCard}>Voir la carte</button></li>
+    <li><button class="text-btn" disabled>Ajouter en ami</button></li>
 </ul>
 
 

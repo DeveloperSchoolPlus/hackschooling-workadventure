@@ -22,7 +22,7 @@
                 userName = reportScreenStore.userName;
                 userUUID = playersStore.getPlayerById(reportScreenStore.userId)?.userUuid;
                 if (userUUID === undefined && reportScreenStore !== userReportEmpty) {
-                    console.error("Could not find UUID for user with ID " + reportScreenStore.userId);
+                    console.error("Impossible de trouver l'UUID pour l'utilisateur avec ID " + reportScreenStore.userId);
                 }
             }
         })
@@ -60,17 +60,17 @@
 
 <div class="report-menu-main nes-container is-rounded">
     <section class="report-menu-title">
-        <h2>Moderate {userName}</h2>
+        <h2>Modérer {userName}</h2>
         <section class="justify-center">
             <button type="button" class="nes-btn" on:click|preventDefault={close}>X</button>
         </section>
     </section>
     <section class="report-menu-action {anonymous ? 'hidden' : ''}">
         <section class="justify-center">
-            <button type="button" class="nes-btn {blockActive ? 'is-disabled' : ''}" on:click|preventDefault={activateBlock}>Block</button>
+            <button type="button" class="nes-btn {blockActive ? 'is-disabled' : ''}" on:click|preventDefault={activateBlock}>Bloquer</button>
         </section>
         <section class="justify-center">
-            <button type="button" class="nes-btn {reportActive ? 'is-disabled' : ''}" on:click|preventDefault={activateReport}>Report</button>
+            <button type="button" class="nes-btn {reportActive ? 'is-disabled' : ''}" on:click|preventDefault={activateReport}>Signaler</button>
         </section>
     </section>
     <section class="report-menu-content">
@@ -79,7 +79,7 @@
         {:else if reportActive}
             <ReportSubMenu userUUID="{userUUID}"/>
         {:else }
-            <p>ERROR : There is no action selected.</p>
+            <p>ERREUR : Aucune action n'est sélectionnée.</p>
         {/if}
     </section>
 </div>

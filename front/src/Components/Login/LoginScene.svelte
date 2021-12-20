@@ -27,22 +27,22 @@
         <img src={logoImg} alt="WorkAdventure logo" />
     </section>
     <section class="text-center">
-        <h2>Enter your name</h2>
+        <h2>Entre ton nom</h2>
     </section>
     <input type="text" name="loginSceneName" class="nes-input is-dark" autofocus maxlength={MAX_USERNAME_LENGTH} bind:value={name} on:keypress={() => {startValidating = true}} class:is-error={name.trim() === '' && startValidating} />
     <section class="error-section">
     {#if name.trim() === '' && startValidating }
-        <p class="err">The name is empty</p>
+        <p class="err">Le nom est vide</p>
     {/if}
     </section>
 
     {#if DISPLAY_TERMS_OF_USE}
     <section class="terms-and-conditions">
-        <p>By continuing, you are agreeing our <a href="https://workadventu.re/terms-of-use" target="_blank">terms of use</a>, <a href="https://workadventu.re/privacy-policy" target="_blank">privacy policy</a> and <a href="https://workadventu.re/cookie-policy" target="_blank">cookie policy</a>.</p>
+        <p>En continuant, vous acceptez nos <a href="https://workadventu.re/terms-of-use" target="_blank">conditions d'utilisation</a>, <a href="https://workadventu.re/privacy-policy" target="_blank">politique de confidentialité</a> et <a href="https://workadventu.re/cookie-policy" target="_blank">politique de cookies</a>.</p>
     </section>
     {/if}
     <section class="action">
-        <button type="submit" class="nes-btn is-primary loginSceneFormSubmit">Continue</button>
+        <button type="submit" class="nes-btn is-primary loginSceneFormSubmit">Continuer</button>
     </section>
 </form>
 

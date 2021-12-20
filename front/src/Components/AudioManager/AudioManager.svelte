@@ -132,7 +132,7 @@
     </div>
     <div class="audio-manager-reduce-conversation">
         <label>
-            reduce in conversations
+            réduire pendant les conversations
             <input type="checkbox" bind:checked={decreaseWhileTalking} on:change={setDecrease}>
         </label>
         <section class="audio-manager-file">

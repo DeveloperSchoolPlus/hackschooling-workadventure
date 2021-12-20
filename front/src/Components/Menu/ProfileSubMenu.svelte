@@ -69,15 +69,15 @@
             -->
             <button type="button" class="nes-btn" on:click|preventDefault={openEditSkinScene}>
                 <img src={btnProfileSubMenuWoka} alt="Edit your WOKA">
-                <span class="btn-hover">Edit your WOKA</span>
+                <span class="btn-hover">Modifiez votre WOKA</span>
             </button>
             <button type="button" class="nes-btn" on:click|preventDefault={openEditCompanionScene}>
                 <img src={btnProfileSubMenuCompanion} alt="Edit your companion">
-                <span class="btn-hover">Edit your companion</span>
+                <span class="btn-hover">Modifier votre compagnon</span>
             </button>
             <button type="button" class="nes-btn" on:click|preventDefault={openEnableCameraScene}>
                 <img src={btnProfileSubMenuCamera} alt="Edit your camera">
-                <span class="btn-hover">Edit your camera</span>
+                <span class="btn-hover">Modifier votre caméra</span>
             </button>
         </section>
     </div>
@@ -90,11 +90,11 @@
                 {/if}
             </section>
             <section>
-                <button type="button" class="nes-btn" on:click|preventDefault={logOut}>Log out</button>
+                <button type="button" class="nes-btn" on:click|preventDefault={logOut}>Se déconnecter</button>
             </section>
         {:else}
             <section>
-                <a type="button" class="nes-btn" href="/login">Sign in</a>
+                <a type="button" class="nes-btn" href="/login">S'identifier</a>
             </section>
         {/if}
     </div>

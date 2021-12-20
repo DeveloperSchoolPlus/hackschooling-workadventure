@@ -9,14 +9,14 @@ function close(): boolean {
 </script>
 
 <div class="error-div nes-container is-dark is-rounded" open>
-    <p class="nes-text is-error title">Error</p>
+    <p class="nes-text is-error title">Erreur</p>
     <div class="body">
     {#each $errorStore as error}
     <p>{error}</p>
     {/each}
     </div>
     <div class="button-bar">
-        <button class="nes-btn is-error" on:click={close}>Close</button>
+        <button class="nes-btn is-error" on:click={close}>Fermer</button>
     </div>
 </div>
 

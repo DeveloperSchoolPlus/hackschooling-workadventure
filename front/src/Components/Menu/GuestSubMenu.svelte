@@ -21,14 +21,14 @@
 <div class="guest-main">
     <section class="container-overflow">
         <section class="share-url not-mobile">
-            <h3>Share the link of the room !</h3>
+            <h3>Partagez le lien de la salle !</h3>
             <input type="text" readonly id="input-share-link" value={location.toString()}>
-            <button type="button" class="nes-btn is-primary" on:click={copyLink}>Copy</button>
+            <button type="button" class="nes-btn is-primary" on:click={copyLink}>Copier</button>
         </section>
         <section class="is-mobile">
-            <h3>Share the link of the room !</h3>
+            <h3>Partagez le lien de la salle !</h3>
             <input type="hidden" readonly id="input-share-link" value={location.toString()}>
-            <button type="button" class="nes-btn is-primary" on:click={shareLink}>Share</button>
+            <button type="button" class="nes-btn is-primary" on:click={shareLink}>Partager</button>
         </section>
     </section>
 </div>

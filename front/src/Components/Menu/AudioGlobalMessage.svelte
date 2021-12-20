@@ -26,7 +26,7 @@
             const selectedFile = inputAudio.files ? inputAudio.files[0] : null;
             if (!selectedFile) {
                 errorFile = true;
-                throw 'no file selected';
+                throw 'Aucun fichier sélectionné';
             }
 
             const fd = new FormData();
@@ -79,7 +79,7 @@
         <p>{fileName} : {fileSize}</p>
     {/if}
     {#if errorFile}
-        <p class="err">No file selected. You need to upload a file before sending it.</p>
+        <p class="err">Aucun fichier sélectionné. Vous devez télécharger un fichier avant de l'envoyer.</p>
     {/if}
     <input type="file" id="input-send-audio" bind:this={fileInput} on:change={(e) => {inputAudioFile(e)}}>
 </section>

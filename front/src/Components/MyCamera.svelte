@@ -36,6 +36,6 @@
         {/if}
     </div>
     <div class="is-silent" class:hide={isSilent}>
-        Silent zone
+        Zone de silence
     </div>
 </div>

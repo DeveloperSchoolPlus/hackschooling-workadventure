@@ -35,7 +35,7 @@
 
 <form class="customCharacterScene">
     <section class="text-center">
-        <h2>Customize your WOKA</h2>
+        <h2>Personalise ton avatar</h2>
     </section>
     <section class="action action-move">
         <button class="customCharacterSceneButton customCharacterSceneButtonLeft nes-btn" on:click|preventDefault={ selectLeft }> &lt; </button>
@@ -43,16 +43,16 @@
     </section>
     <section class="action">
         {#if $activeRowStore === 0}
-            <button type="submit" class="customCharacterSceneFormBack nes-btn" on:click|preventDefault={ previousScene }>Return</button>
+            <button type="submit" class="customCharacterSceneFormBack nes-btn" on:click|preventDefault={ previousScene }>Retour</button>
         {/if}
         {#if $activeRowStore !== 0}
-            <button type="submit" class="customCharacterSceneFormBack nes-btn" on:click|preventDefault={ selectUp }>Back <img src="resources/objects/arrow_up_black.png" alt=""/></button>
+            <button type="submit" class="customCharacterSceneFormBack nes-btn" on:click|preventDefault={ selectUp }>Précédent <img src="resources/objects/arrow_up_black.png" alt=""/></button>
         {/if}
         {#if $activeRowStore === 5}
-            <button type="submit" class="customCharacterSceneFormSubmit nes-btn is-primary" on:click|preventDefault={ finish }>Finish</button>
+            <button type="submit" class="customCharacterSceneFormSubmit nes-btn is-primary" on:click|preventDefault={ finish }>Terminer</button>
         {/if}
         {#if $activeRowStore !== 5}
-            <button type="submit" class="customCharacterSceneFormSubmit nes-btn is-primary" on:click|preventDefault={ selectDown }>Next <img src="resources/objects/arrow_down.png" alt=""/></button>
+            <button type="submit" class="customCharacterSceneFormSubmit nes-btn is-primary" on:click|preventDefault={ selectDown }>Suivant <img src="resources/objects/arrow_down.png" alt=""/></button>
         {/if}
     </section>
 </form>

@@ -9,7 +9,7 @@
 
     let mapName: string = "";
     let mapDescription: string = "";
-    let mapCopyright: string = "The map creator did not declare a copyright for the map.";
+    let mapCopyright: string = "Le créateur de la carte n'a pas déclaré de copyright pour la carte.";
     let tilesetCopyright: string[] = [];
 
     onMount(() => {
@@ -40,18 +40,18 @@
 </script>
 
 <div class="about-room-main">
-    <h2>Information on the map</h2>
+    <h2>Informations sur la carte</h2>
     <section class="container-overflow">
         <h3>{mapName}</h3>
         <p class="string-HTML">{mapDescription}</p>
-        <h3 class="nes-pointer hoverable" on:click={() => expandedMapCopyright = !expandedMapCopyright}>Copyrights of the map</h3>
+        <h3 class="nes-pointer hoverable" on:click={() => expandedMapCopyright = !expandedMapCopyright}>Droits d'auteur de la carte</h3>
         <p class="string-HTML" hidden="{!expandedMapCopyright}">{mapCopyright}</p>
-        <h3 class="nes-pointer hoverable" on:click={() => expandedTilesetCopyright = !expandedTilesetCopyright}>Copyrights of the tilesets</h3>
+        <h3 class="nes-pointer hoverable" on:click={() => expandedTilesetCopyright = !expandedTilesetCopyright}>Droits d'auteur des ensembles de tuiles</h3>
         <section hidden="{!expandedTilesetCopyright}">
             {#each tilesetCopyright as copyright}
                 <p class="string-HTML">{copyright}</p>
             {:else}
-                <p>The map creator did not declare a copyright for the tilesets. Warning, This doesn't mean that those tilesets have no license.</p>
+                <p>Le créateur de la carte n'a pas déclaré de copyright pour les ensembles de tuiles. Attention, cela ne signifie pas que ces ensembles de tuiles n'ont pas de licence.</p>
             {/each}
         </section>
     </section>

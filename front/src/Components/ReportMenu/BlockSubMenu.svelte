@@ -10,7 +10,7 @@
     onMount(() => {
         if (userUUID === undefined) {
             userIsBlocked = false;
-            console.error("There is no user to block");
+            console.error("Il n'y a aucun utilisateur à bloquer");
         } else {
             userIsBlocked = blackListManager.isBlackListed(userUUID);
         }
@@ -18,7 +18,7 @@
 
     function blockUser(): void {
         if (userUUID === undefined) {
-            console.error("There is no user to block");
+            console.error("Il n'y a aucun utilisateur à bloquer");
             return;
         }
         blackListManager.isBlackListed(userUUID)
@@ -29,10 +29,10 @@
 </script>
 
 <div class="block-container">
-    <h3>Block</h3>
-    <p>Block any communication from and to {userName}. This can be reverted.</p>
+    <h3>Bloquer</h3>
+    <p>Bloquer toute communication de et vers {userName}. Cela peut être inversé.</p>
     <button type="button" class="nes-btn is-error" on:click|preventDefault={blockUser}>
-        {userIsBlocked ? 'Unblock this user' : 'Block this user'}
+        {userIsBlocked ? 'Débloquer cet utilisateur' : 'Bloquer cet utilisateur'}
     </button>
 </div>
 

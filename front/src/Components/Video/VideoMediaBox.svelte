@@ -35,7 +35,7 @@
     {/if}
     <button class="report" on:click={() => openReport(peer)}>
         <img alt="Report this user" src={reportImg}>
-        <span>Report/Block</span>
+        <span>Signaler/Bloquer</span>
     </button>
     <video use:srcObject={$streamStore} autoplay playsinline on:click={() => videoFocusStore.toggleFocus(peer)}></video>
     <img src={blockSignImg} class="block-logo" alt="Block" />

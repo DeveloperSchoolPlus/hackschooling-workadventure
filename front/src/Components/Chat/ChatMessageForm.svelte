@@ -24,7 +24,7 @@
 </script>
 
 <form on:submit|preventDefault={saveMessage}>
-    <input type="text" bind:value={newMessageText} placeholder="Enter your message..." on:focus={onFocus} on:blur={onBlur} bind:this={inputElement}>
+    <input type="text" bind:value={newMessageText} placeholder="Écrit ton message..." on:focus={onFocus} on:blur={onBlur} bind:this={inputElement}>
     <button type="submit">
         <img src="/static/images/send.png" alt="Send" width="20">
     </button>

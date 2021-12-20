@@ -30,11 +30,11 @@
 <div class="chatElement">
     <div class="messagePart">
         {#if message.type === ChatMessageTypes.userIncoming}
-            &gt;&gt; {#each targets as target, index}<ChatPlayerName player={target} line={line}></ChatPlayerName>{#if !isLastIteration(index)}, {/if}{/each} entered <span class="date">({renderDate(message.date)})</span>
+            &gt;&gt; {#each targets as target, index}<ChatPlayerName player={target} line={line}></ChatPlayerName>{#if !isLastIteration(index)}, {/if}{/each} est entré <span class="date">({renderDate(message.date)})</span>
         {:else if message.type === ChatMessageTypes.userOutcoming}
-            &lt;&lt; {#each targets as target, index}<ChatPlayerName player={target} line={line}></ChatPlayerName>{#if !isLastIteration(index)}, {/if}{/each} left <span class="date">({renderDate(message.date)})</span>
+            &lt;&lt; {#each targets as target, index}<ChatPlayerName player={target} line={line}></ChatPlayerName>{#if !isLastIteration(index)}, {/if}{/each} est parti <span class="date">({renderDate(message.date)})</span>
         {:else if message.type === ChatMessageTypes.me}
-            <h4>Me: <span class="date">({renderDate(message.date)})</span></h4>
+            <h4>Moi: <span class="date">({renderDate(message.date)})</span></h4>
             {#each texts as text}
                 <div><p class="my-text">{@html urlifyText(text)}</p></div>
             {/each}

@@ -12,7 +12,7 @@
         } else {
             hiddenError = false;
             if( userUUID === undefined) {
-                console.error('User UUID is not valid.');
+                console.error('L\'UUID de l\'utilisateur n\'est pas valide.');
                 return;
             }
             gameManager.getCurrentGameScene().connection?.emitReportPlayerMessage(userUUID, reportMessage);
@@ -22,18 +22,18 @@
 </script>
 
 <div class="report-container-main">
-    <h3>Report</h3>
-    <p>Send a report message to the administrators of this room. They may later ban this user.</p>
+    <h3>Signaler</h3>
+    <p>Envoyez un message de rapport aux administrateurs de cette salle. Ils peuvent par la suite bannir cet utilisateur.</p>
     <form>
         <section>
             <label>
-                <span>Your message: </span>
+                <span>Votre message: </span>
                 <textarea type="text" class="nes-textarea" bind:value={reportMessage}></textarea>
             </label>
-            <p hidden="{hiddenError}">Report message cannot to be empty.</p>
+            <p hidden="{hiddenError}">Le message de rapport ne peut pas être vide.</p>
         </section>
         <section>
-            <button type="submit" class="nes-btn is-error" on:click={submitReport}>Report this user</button>
+            <button type="submit" class="nes-btn is-error" on:click={submitReport}>Signaler cet utilisateur</button>
         </section>
     </form>
 </div>

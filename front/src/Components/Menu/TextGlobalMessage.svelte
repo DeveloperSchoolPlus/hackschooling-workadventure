@@ -58,7 +58,7 @@
         const {default: Quill} = await import("quill"); // eslint-disable-line @typescript-eslint/no-explicit-any
 
         quill = new Quill(QUILL_EDITOR, {
-            placeholder: 'Enter your message here...',
+            placeholder: 'Entrez votre message ici...',
             theme: 'snow',
             modules: {
                 toolbar: toolbarOptions

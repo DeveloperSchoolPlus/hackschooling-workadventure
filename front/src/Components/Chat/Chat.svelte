@@ -46,7 +46,7 @@
     <p class="close-icon" on:click={closeChat}>&times</p>
     <section class="messagesList" bind:this={listDom}>
         <ul>
-            <li><p class="system-text">Here is your chat history: </p></li>
+            <li><p class="system-text">Voici ton historique de chat: </p></li>
         {#each $chatMessagesStore as message, i}
             <li><ChatElement message={message} line={i}></ChatElement></li>
         {/each} 

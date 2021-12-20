@@ -49,10 +49,10 @@
     <div class="global-message-footer">
         <label>
             <input type="checkbox" class="nes-checkbox is-dark nes-pointer" bind:checked={broadcastToWorld}>
-            <span>Broadcast to all rooms of the world</span>
+            <span>Diffusion dans toutes les pièces du monde</span>
         </label>
         <section>
-            <button class="nes-btn is-primary" on:click|preventDefault={send}>Send</button>
+            <button class="nes-btn is-primary" on:click|preventDefault={send}>Envoyer</button>
         </section>
     </div>
 </div>

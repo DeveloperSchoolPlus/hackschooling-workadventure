@@ -16,18 +16,18 @@
 <div class="create-map-main">
     <section class="container-overflow">
         <section>
-            <h3>Getting started</h3>
+            <h3>Commencer</h3>
             <p>
-                WorkAdventure allows you to create an online space to communicate spontaneously with others.
-                And it all starts with creating your own space. Choose from a large selection of prefabricated maps by our team.
+                WorkAdventure vous permet de créer un espace en ligne pour communiquer spontanément avec les autres.
+                Et tout commence par la création de votre propre espace. Choisissez parmi une large sélection de cartes préfabriquées par notre équipe.
             </p>
-            <button type="button" class="nes-btn is-primary" on:click={goToGettingStarted}>Getting started</button>
+            <button type="button" class="nes-btn is-primary" on:click={goToGettingStarted}>Commencer</button>
         </section>
 
         <section>
-            <h3>Create your map</h3>
-            <p>You can also create your own custom map by following the step of the documentation.</p>
-            <button type="button" class="nes-btn" on:click={goToBuildingMap}>Create your map</button>
+            <h3>Créez votre carte</h3>
+            <p>Vous pouvez également créer votre propre carte personnalisée en suivant l'étape de la documentation.</p>
+            <button type="button" class="nes-btn" on:click={goToBuildingMap}>Créez votre carte</button>
         </section>
 
         <iframe title="contact"

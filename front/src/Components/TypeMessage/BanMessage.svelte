@@ -30,7 +30,7 @@
 </script>
 
 <div class="main-ban-message nes-container is-rounded" transition:fly="{{ y: -1000, duration: 500 }}">
-    <h2 class="title-ban-message"><img src="resources/logos/report.svg" alt="***"/> Important message <img src="resources/logos/report.svg" alt="***"/></h2>
+    <h2 class="title-ban-message"><img src="resources/logos/report.svg" alt="***"/> Message important <img src="resources/logos/report.svg" alt="***"/></h2>
     <div class="content-ban-message">
         <p>{text}</p>
     </div>

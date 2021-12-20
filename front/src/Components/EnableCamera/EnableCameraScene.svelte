@@ -77,7 +77,7 @@
 
 <form class="enableCameraScene" on:submit|preventDefault={submit}>
     <section class="text-center">
-        <h2>Turn on your camera and microphone</h2>
+        <h2>Active ta caméra et ton micro</h2>
     </section>
         {#if $localStreamStore.type === 'success' && $localStreamStore.stream}
             <video class="myCamVideoSetup" use:srcObject={$localStreamStore.stream} autoplay muted playsinline></video>
@@ -122,7 +122,7 @@
 
     </section>
     <section class="action">
-        <button type="submit" class="nes-btn is-primary letsgo" >Let's go!</button>
+        <button type="submit" class="nes-btn is-primary letsgo" >C'est parti!</button>
     </section>
 </form>
 

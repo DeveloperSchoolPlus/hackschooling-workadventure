@@ -25,13 +25,13 @@
 
 <form class="selectCompanionScene">
     <section class="text-center">
-        <h2>Select your companion</h2>
+        <h2>Sélectionnez votre compagnon</h2>
         <button class="selectCharacterButton selectCharacterButtonLeft nes-btn" on:click|preventDefault={selectLeft}> &lt; </button>
         <button class="selectCharacterButton selectCharacterButtonRight nes-btn" on:click|preventDefault={selectRight}> &gt; </button>
     </section>
     <section class="action">
-        <button href="/" class="selectCompanionSceneFormBack nes-btn" on:click|preventDefault={noCompanion}>No companion</button>
-        <button type="submit" class="selectCompanionSceneFormSubmit nes-btn is-primary" on:click|preventDefault={selectCompanion}>Continue</button>
+        <button href="/" class="selectCompanionSceneFormBack nes-btn" on:click|preventDefault={noCompanion}>Pas de compagnon</button>
+        <button type="submit" class="selectCompanionSceneFormSubmit nes-btn is-primary" on:click|preventDefault={selectCompanion}>Continuer</button>
     </section>
 </form>
 

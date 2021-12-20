@@ -18,7 +18,7 @@
 
 <div class="audio-playing" transition:fly="{{ x: 210, duration: 500 }}">
     <img src={megaphoneImg} alt="Audio playing" />
-    <p>Audio message</p>
+    <p>Message audio</p>
     <audio bind:this={audio} src={url} on:ended={soundEnded} >
         <track kind="captions">
     </audio>

@@ -21,12 +21,12 @@
 
 <form class="helpCameraSettings nes-container" on:submit|preventDefault={close} transition:fly="{{ y: -900, duration: 500 }}">
     <section>
-        <h2>Camera / Microphone access needed</h2>
-        <p class="err">Permission denied</p>
-        <p>You must allow camera and microphone access in your browser.</p>
+        <h2>Accès caméra/micro requis</h2>
+        <p class="err">Permission refusée</p>
+        <p>Vous devez autoriser l'accès à la caméra et au microphone dans votre navigateur.</p>
         <p>
             {#if isFirefox }
-                <p class="err">Please click the "Remember this decision" checkbox, if you don't want Firefox to keep asking you the authorization.</p>
+                <p class="err">Veuillez cocher la case "Se souvenir de cette décision" si vous ne voulez pas que Firefox continue de vous demander l'autorisation.</p>
                 <img src={firefoxImg} alt="" />
             {:else if isChrome && !isAndroid }
                 <img src={chromeImg} alt="" />
@@ -34,8 +34,8 @@
         </p>
     </section>
     <section>
-        <button class="helpCameraSettingsFormRefresh nes-btn" on:click|preventDefault={refresh}>Refresh</button>
-        <button type="submit" class="helpCameraSettingsFormContinue nes-btn is-primary" on:click|preventDefault={close}>Continue without webcam</button>
+        <button class="helpCameraSettingsFormRefresh nes-btn" on:click|preventDefault={refresh}>Rafraîchir</button>
+        <button type="submit" class="helpCameraSettingsFormContinue nes-btn is-primary" on:click|preventDefault={close}>Continuer sans webcam</button>
     </section>
 </form>
 
