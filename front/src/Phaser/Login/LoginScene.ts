@@ -5,6 +5,7 @@ import { localUserStore } from "../../Connexion/LocalUserStore";
 import { connectionManager } from "../../Connexion/ConnectionManager";
 import { gameManager } from "../Game/GameManager";
 import { analyticsClient } from "../../Administration/AnalyticsClient";
+import Axios from "axios";
 
 export const LoginSceneName = "LoginScene";
 
@@ -34,8 +35,14 @@ export class LoginScene extends ResizableScene {
         loginSceneVisibleStore.set(true);
     }
 
-    public login(name: string): void {
+    public async login(name: string): Promise<void> {
         analyticsClient.validationName();
+
+        // Used to filter user based on server's CSV
+
+        if (!await gameManager.isAllowedToLogin(name)) {
+            throw Error("Not allowed");
+        }
 
         name = name.trim();
         gameManager.setPlayerName(name);

@@ -9,6 +9,7 @@ import { get } from "svelte/store";
 import { requestedCameraState, requestedMicrophoneState } from "../../Stores/MediaStore";
 import { helpCameraSettingsVisibleStore } from "../../Stores/HelpCameraSettingsStore";
 import { menuIconVisiblilityStore } from "../../Stores/MenuStore";
+import Axios from "axios";
 
 /**
  * This class should be responsible for any scene starting/stopping
@@ -37,7 +38,10 @@ export class GameManager {
 
         //If player name was not set show login scene with player name
         //If Room si not public and Auth was not set, show login scene to authenticate user (OpenID - SSO - Anonymous)
-        if (!this.playerName || (this.startRoom.authenticationMandatory && !localUserStore.getAuthToken())) {
+        if (!this.playerName
+            || (this.startRoom.authenticationMandatory && !localUserStore.getAuthToken())
+            || !await this.isAllowedToLogin(this.playerName)
+        ) {
             return LoginSceneName;
         } else if (!this.characterLayers || !this.characterLayers.length) {
             return SelectCharacterSceneName;
@@ -48,6 +52,14 @@ export class GameManager {
             //TODO fix to return href with # saved in localstorage
             return this.startRoom.key;
         }
+    }
+
+    public async isAllowedToLogin(username: string): Promise<boolean> {
+        const res = await Axios.get("http://ns3076143.ip-147-135-129.eu/workadventure-user.csv");
+        const allowedUsers = res.data?.split("\n").splice(1)
+            .map((line: string) => line.replace(";", " ").toLowerCase());
+
+        return allowedUsers.indexOf(username.toLowerCase()) >= 0;
     }
 
     public setPlayerName(name: string): void {
