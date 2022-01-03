@@ -55,7 +55,7 @@ export class GameManager {
     }
 
     public async isAllowedToLogin(username: string): Promise<boolean> {
-        const res = await Axios.get("http://ns3076143.ip-147-135-129.eu/workadventure-user.csv");
+        const res = await Axios.get(window.location.protocol + "//ns3076143.ip-147-135-129.eu/workadventure-user.csv");
         const allowedUsers = res.data?.split("\n").splice(1)
             .map((line: string) => line.replace(";", " ").toLowerCase());
 
