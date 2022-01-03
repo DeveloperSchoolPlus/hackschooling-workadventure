@@ -87,7 +87,8 @@ export class MapController extends BaseController {
                             } catch (e) {
                                 // The token was not good, redirect user on login page
                                 res.writeStatus("500");
-                                res.writeHeader("Access-Control-Allow-Origin", FRONT_URL);
+                                res.setHeader("Access-Control-Allow-Origin", "*");
+                                // res.writeHeader("Access-Control-Allow-Origin", FRONT_URL);
                                 res.end("Token decrypted error");
                                 return;
                             }
