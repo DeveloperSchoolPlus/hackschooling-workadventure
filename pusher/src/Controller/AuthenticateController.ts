@@ -82,7 +82,7 @@ export class AuthenticateController extends BaseController {
                             }
                             console.error("Token cannot to be check on OpenId provider");
                             res.writeStatus("500");
-                            res.setHeader("Access-Control-Allow-Origin", "*");
+                            res.writeHeader("Access-Control-Allow-Origin", "*");
                             // res.writeHeader("Access-Control-Allow-Origin", FRONT_URL);
                             res.end("User cannot to be connected on openid provier");
                             return;
@@ -105,7 +105,7 @@ export class AuthenticateController extends BaseController {
                     //if no access on openid provider, return error
                     console.error("User cannot to be connected on OpenId provider => ", err);
                     res.writeStatus("500");
-                    res.setHeader("Access-Control-Allow-Origin", "*");
+                    res.writeHeader("Access-Control-Allow-Origin", "*");
                     // res.writeHeader("Access-Control-Allow-Origin", FRONT_URL);
                     res.end("User cannot to be connected on openid provier");
                     return;

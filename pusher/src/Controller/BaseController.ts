@@ -5,7 +5,7 @@ export class BaseController {
     protected addCorsHeaders(res: HttpResponse): void {
         res.writeHeader("access-control-allow-headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.writeHeader("access-control-allow-methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
-        res.setHeader("access-control-allow-origin", "*");//FRONT_URL);
+        res.writeHeader("access-control-allow-origin", "*");//FRONT_URL);
     }
 
     /**
