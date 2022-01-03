@@ -91,8 +91,8 @@ services:
       - "traefik.http.routers.pusher-ssl.entryPoints=websecure"
       - "traefik.http.routers.pusher-ssl.tls=true"
       - "traefik.http.routers.pusher-ssl.service=pusher"
-      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=origin-list-or-null"
-      - "traefik.http.routers.pusher.middlewares=cors-headers"
+      #- "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=origin-list-or-null"
+      #- "traefik.http.routers.pusher.middlewares=cors-headers"
   maps:
     image: thecodingmachine/nodejs:12-apache
     environment:
@@ -115,6 +115,9 @@ services:
       - "traefik.http.routers.maps-ssl.entryPoints=websecure"
       - "traefik.http.routers.maps-ssl.tls=true"
       - "traefik.http.routers.maps-ssl.service=maps"
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=*"
+      - "traefik.http.routers.maps.middlewares=cors-headers"
+      - "traefil.http.routers.maps-ssl.middlewares=cors-headers"
 
   back:
     image: thecodingmachine/nodejs:12
