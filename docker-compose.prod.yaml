@@ -3,16 +3,12 @@ services:
   reverse-proxy:
     image: traefik:v2.0
     command:
-      - --api.insecure=true
       - --providers.docker
       - --entryPoints.web.address=:80
       - --entryPoints.websecure.address=:443
-#      - --entryPoints.traefik.address=:9080
     ports:
-      - "80:80"
-      - "443:443"
-      # The Web UI (enabled by --api.insecure=true)
-      - "8080:8080"
+      - "9180:80"
+      - "9443:443"
     depends_on:
       - back
       - front
@@ -95,7 +91,8 @@ services:
       - "traefik.http.routers.pusher-ssl.entryPoints=websecure"
       - "traefik.http.routers.pusher-ssl.tls=true"
       - "traefik.http.routers.pusher-ssl.service=pusher"
-
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=origin-list-or-null"
+      - "traefik.http.routers.pusher.middlewares=cors-headers"
   maps:
     image: thecodingmachine/nodejs:12-apache
     environment:
