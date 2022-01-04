@@ -30,7 +30,6 @@ services:
       HOST: "0.0.0.0"
       NODE_ENV: development
       PUSHER_URL: //pusher.$DOMAIN
-      UPLOADER_URL: //uploader.$DOMAIN
       #ADMIN_URL: //workadventure.localhost
       ICON_URL: //icon.$DOMAIN
       STARTUP_COMMAND_1: ./templater.sh
@@ -149,24 +148,6 @@ services:
       - "traefik.http.routers.back-ssl.entryPoints=websecure"
       - "traefik.http.routers.back-ssl.tls=true"
       - "traefik.http.routers.back-ssl.service=back"
-
-  uploader:
-    image: thecodingmachine/nodejs:12
-    command: yarn dev
-    #command: yarn run profile
-    environment:
-      DEBUG: "*"
-      STARTUP_COMMAND_1: yarn install
-    volumes:
-      - ./uploader:/usr/src/app
-    labels:
-      - "traefik.http.routers.uploader.rule=Host(`uploader.$DOMAIN`)"
-      - "traefik.http.routers.uploader.entryPoints=web"
-      - "traefik.http.services.uploader.loadbalancer.server.port=8080"
-      - "traefik.http.routers.uploader-ssl.rule=Host(`uploader.$DOMAIN`)"
-      - "traefik.http.routers.uploader-ssl.entryPoints=websecure"
-      - "traefik.http.routers.uploader-ssl.tls=true"
-      - "traefik.http.routers.uploader-ssl.service=uploader"
 
   messages:
     #image: thecodingmachine/nodejs:14
