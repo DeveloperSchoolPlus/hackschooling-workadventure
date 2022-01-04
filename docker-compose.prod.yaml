@@ -106,7 +106,7 @@ services:
       STARTUP_COMMAND_1: yarn install
       STARTUP_COMMAND_2: yarn run dev &
     volumes:
-      - ./maps:/var/www/html
+      - ./maps/hackschooling:/var/www/html
     labels:
       - "traefik.http.routers.maps.rule=Host(`maps.$DOMAIN`)"
       - "traefik.http.routers.maps.entryPoints=web,traefik"
@@ -115,9 +115,9 @@ services:
       - "traefik.http.routers.maps-ssl.entryPoints=websecure"
       - "traefik.http.routers.maps-ssl.tls=true"
       - "traefik.http.routers.maps-ssl.service=maps"
-      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=*"
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=origin-list-or-null"
       - "traefik.http.routers.maps.middlewares=cors-headers"
-      - "traefil.http.routers.maps-ssl.middlewares=cors-headers"
+      - "traefik.http.routers.maps-ssl.middlewares=cors-headers"
 
   back:
     image: thecodingmachine/nodejs:12
