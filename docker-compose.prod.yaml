@@ -27,8 +27,8 @@ services:
       DEBUG_MODE: "$DEBUG_MODE"
       JITSI_URL: $JITSI_URL
       JITSI_PRIVATE_MODE: "$JITSI_PRIVATE_MODE"
-      HOST: "0.0.0.0"
-      NODE_ENV: development
+      #HOST: "0.0.0.0"
+      #NODE_ENV: production
       PUSHER_URL: //pusher.$DOMAIN
       #ADMIN_URL: //workadventure.localhost
       ICON_URL: //icon.$DOMAIN
