@@ -69,7 +69,7 @@
             -->
             <button type="button" class="nes-btn" on:click|preventDefault={openEditSkinScene}>
                 <img src={btnProfileSubMenuWoka} alt="Edit your WOKA">
-                <span class="btn-hover">Modifiez votre WOKA</span>
+                <span class="btn-hover">Modifiez votre avatar</span>
             </button>
             <button type="button" class="nes-btn" on:click|preventDefault={openEditCompanionScene}>
                 <img src={btnProfileSubMenuCompanion} alt="Edit your companion">

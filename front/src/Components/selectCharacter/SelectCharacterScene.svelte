@@ -26,13 +26,13 @@
 
 <form class="selectCharacterScene">
     <section class="text-center">
-        <h2>Sélectionnez votre WOKA</h2>
+        <h2>Sélectionnez votre avatar</h2>
         <button class="selectCharacterButton selectCharacterButtonLeft nes-btn" on:click|preventDefault={ selectLeft }> &lt; </button>
         <button class="selectCharacterButton selectCharacterButtonRight nes-btn" on:click|preventDefault={ selectRight }> &gt; </button>
     </section>
     <section class="action">
         <button type="submit" class="selectCharacterSceneFormSubmit nes-btn is-primary" on:click|preventDefault={ cameraScene }>Continuer</button>
-        <button type="submit" class="selectCharacterSceneFormCustomYourOwnSubmit nes-btn" on:click|preventDefault={ customizeScene }>Personnalisez votre WOKA</button>
+        <button type="submit" class="selectCharacterSceneFormCustomYourOwnSubmit nes-btn" on:click|preventDefault={ customizeScene }>Personnalisez votre avatar</button>
     </section>
 </form>
 
