@@ -62,7 +62,7 @@ export class GameManager {
         return allowedUsers.indexOf(username.toLowerCase()) >= 0;
     }
 
-    public setPlayerName(name: string): void {
+    public setPlayerName(name: string | null): void {
         this.playerName = name;
         localUserStore.setName(name);
     }

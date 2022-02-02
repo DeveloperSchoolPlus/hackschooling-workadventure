@@ -10,6 +10,7 @@ import { _ServiceWorker } from "../Network/ServiceWorker";
 import { loginSceneVisibleIframeStore } from "../Stores/LoginSceneStore";
 import { userIsConnected } from "../Stores/MenuStore";
 import { analyticsClient } from "../Administration/AnalyticsClient";
+import { gameManager } from "../Phaser/Game/GameManager";
 
 class ConnectionManager {
     private localUser!: LocalUser;
@@ -59,13 +60,14 @@ class ConnectionManager {
     public async logout() {
         //user logout, set connected store for menu at false
         userIsConnected.set(false);
+        gameManager.setPlayerName(null);
 
         //Logout user in pusher and hydra
         const token = localUserStore.getAuthToken();
+        localUserStore.setAuthToken(null);
         const { authToken } = await Axios.get(`${PUSHER_URL}/logout-callback`, { params: { token } }).then(
             (res) => res.data
         );
-        localUserStore.setAuthToken(null);
 
         //Go on login page can permit to clear token and start authentication process
         window.location.assign("/login");

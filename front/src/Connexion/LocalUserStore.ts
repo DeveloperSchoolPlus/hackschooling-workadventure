@@ -32,8 +32,8 @@ class LocalUserStore {
         return data ? JSON.parse(data) : null;
     }
 
-    setName(name: string): void {
-        localStorage.setItem(playerNameKey, name);
+    setName(name: string | null): void {
+        name ? localStorage.setItem(playerNameKey, name) : localStorage.removeItem(playerNameKey);
     }
     getName(): string | null {
         const value = localStorage.getItem(playerNameKey) || "";

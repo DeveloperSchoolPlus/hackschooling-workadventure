@@ -6,6 +6,7 @@ import { connectionManager } from "../../Connexion/ConnectionManager";
 import { gameManager } from "../Game/GameManager";
 import { analyticsClient } from "../../Administration/AnalyticsClient";
 import Axios from "axios";
+import { userIsConnected } from "../../Stores/MenuStore";
 
 export const LoginSceneName = "LoginScene";
 
@@ -46,6 +47,7 @@ export class LoginScene extends ResizableScene {
 
         name = name.trim();
         gameManager.setPlayerName(name);
+        userIsConnected.set(true);
 
         this.scene.stop(LoginSceneName);
         gameManager.tryResumingGame(SelectCharacterSceneName);
