@@ -39,3 +39,10 @@ If you want to deploy on another server, you can either :
 - Use the default docker-compose to work with traefik if there is no webserver installed
 - Copy the nginx configuration from the current server
 
+### Dev
+To run with the same environment in dev mode, you can use the docker-compose.prod.yaml but you will need to do some changes :
+- Replace the port 9180 by 80
+- Replace the port 9443 by 443
+- You may need to add vhost to handle all the subdomain for workadventure.localhost as 127.0.0.1
+- You will need to go to https://pusher.workadventure.localhost to allow the certificate before you can use the application
+- You will need to create a .env file ( a template .env.template exists in the repo )
