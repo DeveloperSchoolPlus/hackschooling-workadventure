@@ -61,6 +61,7 @@
 <div class="customize-main">
     <div class="submenu">
         <section>
+            <br/><br/><br/>
             <!--
             <button type="button" class="nes-btn" on:click|preventDefault={openEditNameScene}>
                 <img src={btnProfileSubMenuIdentity} alt="Edit your name">
