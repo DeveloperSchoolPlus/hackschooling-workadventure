@@ -25,7 +25,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 #      - ./acme.json:/acme.json
-    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - "play.$DOMAIN"
+          - 'pusher.$DOMAIN'
+          - 'maps.$DOMAIN'
 
 
   front:
