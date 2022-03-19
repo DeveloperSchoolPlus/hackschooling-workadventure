@@ -7,8 +7,8 @@ services:
       #- --api.insecure=true
       - --providers.docker
       - --entryPoints.web.address=:80
-      - --entrypoints.web.http.redirections.entryPoint.to=websecure
-      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      #- --entrypoints.web.http.redirections.entryPoint.to=websecure
+      #- --entrypoints.web.http.redirections.entryPoint.scheme=https
       - --entryPoints.websecure.address=:443
 #      - --certificatesresolvers.myresolver.acme.email=${ACME_EMAIL}
 #      - --certificatesresolvers.myresolver.acme.storage=/acme.json
@@ -126,9 +126,9 @@ services:
       DEBUG_MODE: "$DEBUG_MODE"
       HOST: "0.0.0.0"
       NODE_ENV: production
-      APACHE_DOCUMENT_ROOT: dist/
-      APACHE_EXTENSIONS: headers
-      APACHE_EXTENSION_HEADERS: 1
+      #APACHE_DOCUMENT_ROOT: dist/
+      #APACHE_EXTENSIONS: headers
+      #APACHE_EXTENSION_HEADERS: 1
       STARTUP_COMMAND_0: sudo a2enmod headers
       STARTUP_COMMAND_1: yarn install
       STARTUP_COMMAND_2: yarn run dev &
