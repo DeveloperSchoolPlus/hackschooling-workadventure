@@ -6,8 +6,6 @@ services:
       - --log.level=WARN
       - --providers.docker
       - --entryPoints.web.address=:80
-      - --entrypoints.web.http.redirections.entryPoint.to=websecure
-      - --entrypoints.web.http.redirections.entryPoint.scheme=https
       - --entryPoints.websecure.address=:443
     ports:
       - "9180:80"
