@@ -10,10 +10,11 @@ services:
       #- --entrypoints.web.http.redirections.entryPoint.to=websecure
       #- --entrypoints.web.http.redirections.entryPoint.scheme=https
       - --entryPoints.websecure.address=:443
-#      - --certificatesresolvers.myresolver.acme.email=${ACME_EMAIL}
-#      - --certificatesresolvers.myresolver.acme.storage=/acme.json
-      # used during the challenge
-#      - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
+      - --certificatesResolvers.myresolver.acme.email=${ACME_EMAIL}
+      - --certificatesResolvers.myresolver.acme.storage=acme.json
+      - --certificatesResolvers.myresolver.acme.httpChallenge=true
+        # used during the challenge
+      - --certificatesResolvers.myresolver.acme.httpchallenge.entrypoint=web
     ports:
       - "80:80"
       - "443:443"
@@ -24,7 +25,7 @@ services:
       - front
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#      - ./acme.json:/acme.json
+        #- /home/ubuntu/hackschooling-workadventure/acme.json:/acme.json
     networks:
       default:
         aliases:
@@ -58,7 +59,7 @@ services:
       - "traefik.http.routers.front-ssl.entryPoints=websecure"
       - "traefik.http.routers.front-ssl.tls=true"
       - "traefik.http.routers.front-ssl.service=front"
-#      - "traefik.http.routers.front-ssl.tls.certresolver=myresolver"
+      - "traefik.http.routers.front-ssl.tls.certresolver=myresolver"
     restart: unless-stopped
 
   pusher:
@@ -82,7 +83,7 @@ services:
       - "traefik.http.routers.pusher-ssl.entryPoints=websecure"
       - "traefik.http.routers.pusher-ssl.tls=true"
       - "traefik.http.routers.pusher-ssl.service=pusher"
-#      - "traefik.http.routers.pusher-ssl.tls.certresolver=myresolver"
+      - "traefik.http.routers.pusher-ssl.tls.certresolver=myresolver"
     restart: unless-stopped
 
   back:
@@ -105,7 +106,7 @@ services:
       - "traefik.http.routers.back-ssl.entryPoints=websecure"
       - "traefik.http.routers.back-ssl.tls=true"
       - "traefik.http.routers.back-ssl.service=back"
-#      - "traefik.http.routers.back-ssl.tls.certresolver=myresolver"
+      - "traefik.http.routers.back-ssl.tls.certresolver=myresolver"
     restart: unless-stopped
 
   icon:
@@ -118,7 +119,7 @@ services:
       - "traefik.http.routers.icon-ssl.entryPoints=websecure"
       - "traefik.http.routers.icon-ssl.tls=true"
       - "traefik.http.routers.icon-ssl.service=icon"
-#      - "traefik.http.routers.icon-ssl.tls.certresolver=myresolver"
+      - "traefik.http.routers.icon-ssl.tls.certresolver=myresolver"
 
   maps:
     image: thecodingmachine/nodejs:12-apache
@@ -145,3 +146,4 @@ services:
       - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworigin=origin-list-or-null"
       - "traefik.http.routers.maps.middlewares=cors-headers"
       - "traefik.http.routers.maps-ssl.middlewares=cors-headers"
+      - "traefik.http.routers.maps-ssl.tls.certresolver=myresolver"
