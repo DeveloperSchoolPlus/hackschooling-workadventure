@@ -181,7 +181,9 @@ class JitsiFactory {
                     options.onload = () => doResolve(); //we want for the iframe to be loaded before triggering animations.
                     setTimeout(() => doResolve(), 2000); //failsafe in case the iframe is deleted before loading or too long to load
                     this.jitsiApi = new window.JitsiMeetExternalAPI(domain, options);
-                    this.jitsiApi.executeCommand("displayName", playerName);
+                    this.jitsiApi.addListener("videoConferenceJoined", () => {
+                        this.jitsiApi?.executeCommand("displayName", playerName);
+                    });
 
                     this.jitsiApi.addListener("audioMuteStatusChanged", this.audioCallback);
                     this.jitsiApi.addListener("videoMuteStatusChanged", this.videoCallback);
